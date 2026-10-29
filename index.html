@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MegaOfertas Automáticas: descubre ofertas, tiendas populares y oportunidades de compra en un solo lugar.">
+  <meta name="theme-color" content="#071426">
+  <title>MegaOfertas Automáticas | Ofertas y tiendas</title>
+  <style>
+    :root{--bg:#071426;--panel:#0e2038;--panel2:#132b49;--cyan:#32d6e8;--purple:#9b7bff;--text:#f4f8ff;--muted:#b7c6da;--line:rgba(255,255,255,.12);--green:#7df0bd}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at top right,rgba(82,62,180,.22),transparent 36%),radial-gradient(ellipse at top left,rgba(27,190,213,.14),transparent 32%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit}
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(7,20,38,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:900;letter-spacing:-.5px;text-decoration:none;font-size:1.1rem}
+    .brand span{color:var(--cyan)}
+    nav{display:flex;gap:16px;flex-wrap:wrap}
+    nav a{text-decoration:none;color:var(--muted);font-size:.92rem}
+    nav a:hover{color:var(--cyan)}
+    .hero{padding:68px 0 48px}
+    .eyebrow{display:inline-block;border:1px solid rgba(50,214,232,.35);background:rgba(50,214,232,.08);color:var(--cyan);padding:6px 12px;border-radius:999px;font-size:.82rem;font-weight:700}
+    h1{font-size:clamp(2.25rem,7vw,4.5rem);line-height:1.04;letter-spacing:-2px;max-width:850px;margin:20px 0}
+    h1 .accent{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{color:var(--muted);font-size:1.1rem;max-width:680px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;padding:12px 18px;border-radius:12px;font-weight:800;text-decoration:none;border:1px solid var(--line);background:var(--panel2)}
+    .btn.primary{background:linear-gradient(100deg,#26bfd6,#8c70f4);color:#061426;border:0}
+    section{padding:38px 0}
+    .section-head{margin-bottom:22px}
+    h2{font-size:clamp(1.6rem,4vw,2.35rem);line-height:1.15;margin:0 0 8px;letter-spacing:-.7px}
+    .sub{color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card{background:linear-gradient(145deg,rgba(19,43,73,.95),rgba(14,32,56,.95));border:1px solid var(--line);border-radius:20px;padding:22px;min-width:0}
+    .icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(50,214,232,.12);font-size:1.5rem;margin-bottom:14px}
+    .card h3{margin:0 0 7px;font-size:1.15rem}
+    .card p{color:var(--muted);margin:0 0 16px;font-size:.95rem}
+    .card a.link{color:var(--cyan);font-weight:800;text-decoration:none}
+    .deal{border:1px dashed rgba(155,123,255,.6);background:rgba(155,123,255,.07);border-radius:18px;padding:24px}
+    .deal p{color:var(--muted)}
+    .notice{font-size:.88rem;color:var(--muted);border-left:3px solid var(--purple);padding:10px 14px;background:rgba(155,123,255,.07);border-radius:0 10px 10px 0}
+    form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    input[type=email]{flex:1;min-width:210px;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:#071426;color:var(--text);font:inherit}
+    button{font:inherit;cursor:pointer}
+    .form-note{font-size:.82rem;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:28px 0 40px;margin-top:30px;color:var(--muted);font-size:.88rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-links{display:flex;gap:14px;flex-wrap:wrap}
+    .footer-links a{color:var(--muted)}
+    .disclaimer{font-size:.83rem;color:var(--muted)}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}.nav{align-items:flex-start;padding:14px 0;flex-direction:column}nav{gap:12px}.hero{padding-top:46px}h1{letter-spacing:-1.3px}.card{padding:19px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#inicio">Mega<span>Ofertas</span> Automáticas</a>
+      <nav aria-label="Navegación principal">
+        <a href="#tiendas">Tiendas</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#boletin">Novedades</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="inicio">
+      <span class="eyebrow">🛍️ Tu centro de compras inteligente</span>
+      <h1>Encuentra tus próximas compras con <span class="accent">más facilidad.</span></h1>
+      <p class="lead">Explora tiendas populares, compara opciones y descubre promociones desde un solo lugar. Estamos preparando nuevas selecciones de ofertas para ayudarte a comprar con más información.</p>
+      <div class="actions">
+        <a class="btn primary" href="#tiendas">Explorar tiendas →</a>
+        <a class="btn" href="#boletin">Recibir novedades</a>
+      </div>
+    </section>
+
+    <section class="wrap" id="tiendas">
+      <div class="section-head">
+        <h2>Tiendas populares</h2>
+        <p class="sub">Accede a las páginas oficiales de estas tiendas.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="icon">🟡</div>
+          <h3>Mercado Libre</h3>
+          <p>Explora productos de distintas categorías y vendedores.</p>
+          <a class="link" href="https://www.mercadolibre.com/" target="_blank" rel="noopener noreferrer">Visitar tienda ↗</a>
+        </article>
+        <article class="card">
+          <div class="icon">📦</div>
+          <h3>Amazon</h3>
+          <p>Busca productos, novedades y ofertas disponibles en tu región.</p>
+          <a class="link" href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer">Visitar tienda ↗</a>
+        </article>
+        <article class="card">
+          <div class="icon">🛒</div>
+          <h3>Walmart</h3>
+          <p>Consulta productos para el hogar, tecnología y uso diario.</p>
+          <a class="link" href="https://www.walmart.com/" target="_blank" rel="noopener noreferrer">Visitar tienda ↗</a>
+        </article>
+        <article class="card">
+          <div class="icon">👗</div>
+          <h3>SHEIN</h3>
+          <p>Descubre moda, accesorios y artículos de estilo de vida.</p>
+          <a class="link" href="https://www.shein.com/" target="_blank" rel="noopener noreferrer">Visitar tienda ↗</a>
+        </article>
+        <article class="card">
+          <div class="icon">🎧</div>
+          <h3>Tecnología</h3>
+          <p>Compara características y precios antes de decidir tu compra.</p>
+          <a class="link" href="#ofertas">Ver recomendaciones ↓</a>
+        </article>
+        <article class="card">
+          <div class="icon">🏠</div>
+          <h3>Hogar y vida diaria</h3>
+          <p>Encuentra ideas útiles para organizar y equipar tu espacio.</p>
+          <a class="link" href="#ofertas">Ver recomendaciones ↓</a>
+        </article>
+      </div>
+      <p class="disclaimer" style="margin-top:16px">Los enlaces de tiendas de esta versión son enlaces generales, no enlaces de afiliado personalizados. Las marcas pertenecen a sus respectivos propietarios.</p>
+    </section>
+
+    <section class="wrap" id="ofertas">
+      <div class="section-head">
+        <h2>Zona de ofertas destacadas</h2>
+        <p class="sub">Aquí añadiremos promociones verificadas y enlaces especiales cuando estén disponibles.</p>
+      </div>
+      <div class="deal">
+        <h3>✨ Próximamente: selección de oportunidades</h3>
+        <p>Antes de publicar una oferta, comprueba el precio, los gastos de envío, la disponibilidad y las condiciones directamente con la tienda. Los precios y promociones pueden cambiar sin previo aviso.</p>
+        <a class="btn" href="#tiendas">Explorar tiendas</a>
+      </div>
+    </section>
+
+    <section class="wrap" id="boletin">
+      <div class="section-head">
+        <h2>Recibe novedades</h2>
+        <p class="sub">Más adelante podrás avisar a tus visitantes cuando el formulario esté conectado a un servicio de correo.</p>
+      </div>
+      <div class="card">
+        <h3>📬 Novedades de MegaOfertas</h3>
+        <p>El formulario todavía no está conectado. No introduzcas datos personales aquí hasta que se configure el servicio de suscripción.</p>
+        <form onsubmit="event.preventDefault(); document.getElementById('form-msg').textContent='Este formulario todavía no está activo. Vuelve pronto.';">
+          <label for="email" style="position:absolute;left:-9999px">Correo electrónico</label>
+          <input id="email" type="email" placeholder="Tu correo electrónico" autocomplete="email" aria-label="Tu correo electrónico" required>
+          <button class="btn primary" type="submit">Avisarme</button>
+        </form>
+        <p class="form-note" id="form-msg" aria-live="polite">Formulario de demostración; no guarda ni envía tu correo.</p>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="notice"><strong>Transparencia:</strong> MegaOfertas Automáticas puede incorporar enlaces de afiliado en el futuro. Si eso ocurre, lo indicaremos claramente. Un enlace de afiliado puede generar una comisión si compras a través de él, sin que necesariamente pagues más.</div>
+      <p class="disclaimer">La publicidad no está activada en esta versión. Para mostrar anuncios habrá que solicitar una cuenta publicitaria, cumplir sus políticas y colocar el código autorizado después de la aprobación.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div><strong style="color:var(--text)">MegaOfertas Automáticas</strong><br>Un punto de partida para descubrir tiendas y ofertas.</div>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#tiendas">Tiendas</a>
+        <a href="#boletin">Novedades</a>
+      </div>
+      <div>© <span id="year"></span> MegaOfertas Automáticas</div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
