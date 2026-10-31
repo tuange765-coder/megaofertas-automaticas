@@ -3,29 +3,315 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="MegaOfertas Automáticas: explora tiendas populares y recomendaciones de compra.">
+<meta name="description" content="MegaOfertas Automáticas: explora tiendas populares, recomendaciones y nuestras redes sociales.">
 <meta name="theme-color" content="#071426">
 <title>MegaOfertas Automáticas | Ofertas y tiendas</title>
+
 <style>
-:root{--bg:#071426;--panel:#102541;--cyan:#32d6e8;--purple:#9b7bff;--text:#f4f8ff;--muted:#b7c6da;--line:rgba(255,255,255,.14)}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#292050 0,transparent 38%),var(--bg);color:var(--text);font-family:system-ui,Arial,sans-serif;line-height:1.6}a{color:inherit}.wrap{width:min(1050px,92%);margin:auto}header{position:sticky;top:0;background:#071426f2;border-bottom:1px solid var(--line)}.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 0}.brand{font-weight:900;text-decoration:none}.brand span{color:var(--cyan)}nav,.footlinks{display:flex;gap:15px;flex-wrap:wrap}nav a,.footlinks a{color:var(--muted);text-decoration:none}.hero{padding:60px 0 40px}.eyebrow{color:var(--cyan);font-weight:700}h1{font-size:clamp(2.3rem,7vw,4.4rem);line-height:1.05;max-width:800px;margin:14px 0;letter-spacing:-1px}.accent{color:var(--cyan)}.lead,.sub,.card p,.muted{color:var(--muted)}.lead{font-size:1.1rem;max-width:700px}.btn{display:inline-block;text-decoration:none;font-weight:800;padding:11px 16px;border-radius:12px;background:var(--panel);border:1px solid var(--line);margin:6px 8px 0 0}.primary{background:linear-gradient(100deg,#26bfd6,#8c70f4);color:#061426;border:0}section{padding:32px 0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card,.panel{padding:21px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#132b49,#0e2038)}.icon{font-size:1.8rem}.card h3{margin:8px 0}.card p{margin:0 0 15px}.link{color:var(--cyan);font-weight:800;text-decoration:none}.notice{border-left:3px solid var(--purple);padding:14px;background:#9b7b7f12;color:var(--muted)}footer{border-top:1px solid var(--line);padding:26px 0;margin-top:25px;color:var(--muted);font-size:.9rem}.footinner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}@media(max-width:700px){.grid{grid-template-columns:1fr}.hero{padding-top:40px}}
+:root{
+  --bg:#071426;
+  --panel:#102541;
+  --cyan:#32d6e8;
+  --purple:#9b7bff;
+  --text:#f4f8ff;
+  --muted:#b7c6da;
+  --line:rgba(255,255,255,.14)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:radial-gradient(ellipse at top right,#292050 0,transparent 38%),var(--bg);
+  color:var(--text);
+  font-family:system-ui,Arial,sans-serif;
+  line-height:1.6
+}
+a{color:inherit}
+.wrap{width:min(1050px,92%);margin:auto}
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#071426f2;
+  border-bottom:1px solid var(--line)
+}
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+  padding:16px 0
+}
+.brand{font-weight:900;text-decoration:none}
+.brand span{color:var(--cyan)}
+nav,.footlinks{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap
+}
+nav a,.footlinks a{
+  color:var(--muted);
+  text-decoration:none
+}
+nav a:hover,.footlinks a:hover{color:var(--cyan)}
+.hero{padding:60px 0 40px}
+.eyebrow{color:var(--cyan);font-weight:700}
+h1{
+  font-size:clamp(2.3rem,7vw,4.4rem);
+  line-height:1.05;
+  max-width:800px;
+  margin:14px 0;
+  letter-spacing:-1px
+}
+.accent{color:var(--cyan)}
+.lead,.sub,.card p,.muted{color:var(--muted)}
+.lead{font-size:1.1rem;max-width:700px}
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  font-weight:800;
+  padding:11px 16px;
+  border-radius:12px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  margin:6px 8px 0 0
+}
+.btn:hover{filter:brightness(1.15)}
+.primary{
+  background:linear-gradient(100deg,#26bfd6,#8c70f4);
+  color:#061426;
+  border:0
+}
+section{padding:32px 0}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px
+}
+.card,.panel{
+  padding:21px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:linear-gradient(145deg,#132b49,#0e2038)
+}
+.icon{font-size:1.8rem}
+.card h3{margin:8px 0}
+.card p{margin:0 0 15px}
+.link{
+  color:var(--cyan);
+  font-weight:800;
+  text-decoration:none
+}
+.notice{
+  border-left:3px solid var(--purple);
+  padding:14px;
+  background:#9b7b7f12;
+  color:var(--muted)
+}
+.social-card{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:210px
+}
+.social-card .btn{margin-top:12px}
+footer{
+  border-top:1px solid var(--line);
+  padding:26px 0;
+  margin-top:25px;
+  color:var(--muted);
+  font-size:.9rem
+}
+.footinner{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap
+}
+@media(max-width:700px){
+  .grid{grid-template-columns:1fr}
+  .hero{padding-top:40px}
+  .nav{align-items:flex-start}
+}
 </style>
 </head>
+
 <body>
-<header><div class="wrap nav"><a class="brand" href="index.html">Mega<span>Ofertas</span> Automáticas</a><nav><a href="#tiendas">Tiendas</a><a href="#ofertas">Ofertas</a><a href="contact.html">Contacto</a></nav></div></header>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      Mega<span>Ofertas</span> Automáticas
+    </a>
+    <nav>
+      <a href="#tiendas">Tiendas</a>
+      <a href="#ofertas">Ofertas</a>
+      <a href="#redes">Redes sociales</a>
+      <a href="contact.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-<section class="hero wrap"><span class="eyebrow">🛍️ TU CENTRO DE COMPRAS INTELIGENTE</span><h1>Encuentra tus próximas compras con <span class="accent">más facilidad.</span></h1><p class="lead">Explora tiendas populares y recomendaciones desde un solo lugar. Antes de comprar, comprueba el precio final, los gastos de envío, la disponibilidad y las condiciones directamente con cada tienda.</p><a class="btn primary" href="#tiendas">Explorar tiendas →</a><a class="btn" href="#ofertas">Ver recomendaciones</a></section>
-<section class="wrap" id="tiendas"><h2>Tiendas populares</h2><p class="sub">Enlaces generales a las tiendas. No son enlaces de afiliado personalizados.</p><div class="grid">
-<article class="card"><div class="icon">🟡</div><h3>Mercado Libre</h3><p>Explora productos de distintas categorías.</p><a class="link" href="https://www.mercadolibre.com/" target="_blank" rel="noopener">Visitar tienda ↗</a></article>
-<article class="card"><div class="icon">📦</div><h3>Amazon</h3><p>Busca productos y ofertas disponibles en tu región.</p><a class="link" href="https://www.amazon.com/" target="_blank" rel="noopener">Visitar tienda ↗</a></article>
-<article class="card"><div class="icon">🛒</div><h3>Walmart</h3><p>Consulta productos para el hogar y uso diario.</p><a class="link" href="https://www.walmart.com/" target="_blank" rel="noopener">Visitar tienda ↗</a></article>
-<article class="card"><div class="icon">👗</div><h3>SHEIN</h3><p>Descubre moda y accesorios.</p><a class="link" href="https://www.shein.com/" target="_blank" rel="noopener">Visitar tienda ↗</a></article>
-<article class="card"><div class="icon">🎧</div><h3>Tecnología</h3><p>Próximamente: comparaciones y recomendaciones originales.</p><a class="link" href="#ofertas">Ver sección ↓</a></article>
-<article class="card"><div class="icon">🏠</div><h3>Hogar y vida diaria</h3><p>Ideas útiles para organizar y equipar tu espacio.</p><a class="link" href="#ofertas">Ver sección ↓</a></article>
-</div></section>
-<section class="wrap" id="ofertas"><h2>Ofertas destacadas</h2><div class="panel"><h3>✨ Próximamente: selección de oportunidades</h3><p class="muted">Añadiremos promociones verificadas y recomendaciones propias. Los precios y las promociones pueden cambiar; confirma siempre los detalles en la tienda.</p><a class="btn" href="#tiendas">Explorar tiendas</a></div></section>
-<section class="wrap"><div class="notice"><strong>Transparencia:</strong> MegaOfertas Automáticas puede incorporar enlaces de afiliado en el futuro. Si se añaden, lo indicaremos claramente. Un enlace de afiliado puede generar una comisión según las condiciones del programa.</div><p class="muted">La publicidad aún no está activada. Se añadirá únicamente si el sitio cumple las políticas del proveedor y recibe aprobación.</p></section>
+
+<section class="hero wrap">
+  <span class="eyebrow">🛍️ TU CENTRO DE COMPRAS INTELIGENTE</span>
+
+  <h1>
+    Encuentra tus próximas compras con
+    <span class="accent">más facilidad.</span>
+  </h1>
+
+  <p class="lead">
+    Explora tiendas populares y recomendaciones desde un solo lugar.
+    Antes de comprar, comprueba el precio final, los gastos de envío,
+    la disponibilidad y las condiciones directamente con cada tienda.
+  </p>
+
+  <a class="btn primary" href="#tiendas">Explorar tiendas →</a>
+  <a class="btn" href="#ofertas">Ver recomendaciones</a>
+</section>
+
+<section class="wrap" id="tiendas">
+  <h2>Tiendas populares</h2>
+  <p class="sub">
+    Enlaces generales a las tiendas. No son enlaces de afiliado personalizados.
+  </p>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="icon">🟡</div>
+      <h3>Mercado Libre</h3>
+      <p>Explora productos de distintas categorías.</p>
+      <a class="link" href="https://www.mercadolibre.com/" target="_blank" rel="noopener noreferrer">Visitar tienda ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">📦</div>
+      <h3>Amazon</h3>
+      <p>Busca productos y ofertas disponibles en tu región.</p>
+      <a class="link" href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer">Visitar tienda ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🛒</div>
+      <h3>Walmart</h3>
+      <p>Consulta productos para el hogar y uso diario.</p>
+      <a class="link" href="https://www.walmart.com/" target="_blank" rel="noopener noreferrer">Visitar tienda ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">👗</div>
+      <h3>SHEIN</h3>
+      <p>Descubre moda y accesorios.</p>
+      <a class="link" href="https://www.shein.com/" target="_blank" rel="noopener noreferrer">Visitar tienda ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🎧</div>
+      <h3>Tecnología</h3>
+      <p>Próximamente: comparaciones y recomendaciones originales.</p>
+      <a class="link" href="#ofertas">Ver sección ↓</a>
+    </article>
+
+    <article class="card">
+      <div class="icon">🏠</div>
+      <h3>Hogar y vida diaria</h3>
+      <p>Ideas útiles para organizar y equipar tu espacio.</p>
+      <a class="link" href="#ofertas">Ver sección ↓</a>
+    </article>
+
+  </div>
+</section>
+
+<section class="wrap" id="ofertas">
+  <h2>Ofertas destacadas</h2>
+
+  <div class="panel">
+    <h3>✨ Próximamente: selección de oportunidades</h3>
+    <p class="muted">
+      Añadiremos promociones verificadas y recomendaciones propias.
+      Los precios y las promociones pueden cambiar; confirma siempre
+      los detalles en la tienda.
+    </p>
+    <a class="btn" href="#tiendas">Explorar tiendas</a>
+  </div>
+</section>
+
+<!-- NUEVA SECCIÓN DE REDES SOCIALES -->
+
+<section class="wrap" id="redes">
+  <h2>Conéctate con nosotros</h2>
+
+  <p class="sub">
+    Síguenos en nuestras redes sociales y descubre nuestras novedades.
+  </p>
+
+  <div class="grid">
+
+    <article class="card social-card">
+      <div class="icon">📘</div>
+      <h3>Facebook</h3>
+      <p>Susalud Santateresa</p>
+      <a class="btn primary"
+         href="https://www.facebook.com/susalud.santateresa"
+         target="_blank"
+         rel="noopener noreferrer">
+        Visitar Facebook →
+      </a>
+    </article>
+
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="notice">
+    <strong>Transparencia:</strong>
+    MegaOfertas Automáticas puede incorporar enlaces de afiliado
+    en el futuro. Si se añaden, lo indicaremos claramente.
+    Un enlace de afiliado puede generar una comisión según
+    las condiciones del programa.
+  </div>
+
+  <p class="muted">
+    La publicidad aún no está activada. Se añadirá únicamente
+    si el sitio cumple las políticas del proveedor y recibe aprobación.
+  </p>
+</section>
+
 </main>
-<footer><div class="wrap footinner"><div><strong style="color:white">MegaOfertas Automáticas</strong><br>Tiendas y oportunidades de compra.</div><div class="footlinks"><a href="privacy.html">Privacidad</a><a href="affiliate-disclosure.html">Aviso de afiliados</a><a href="contact.html">Contacto</a></div><div>© <span id="year"></span> MegaOfertas Automáticas</div></div></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body></html>
+
+<footer>
+  <div class="wrap footinner">
+
+    <div>
+      <strong style="color:white">MegaOfertas Automáticas</strong>
+      <br>
+      Tiendas y oportunidades de compra.
+    </div>
+
+    <div class="footlinks">
+      <a href="privacy.html">Privacidad</a>
+      <a href="affiliate-disclosure.html">Aviso de afiliados</a>
+      <a href="contact.html">Contacto</a>
+      <a href="#redes">Redes sociales</a>
+    </div>
+
+    <div>
+      © <span id="year"></span> MegaOfertas Automáticas
+    </div>
+
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
